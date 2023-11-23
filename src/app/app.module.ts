@@ -7,6 +7,7 @@ import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { NgxGaugeModule } from 'ngx-gauge';
 import { GaugeComponent } from './gauge/gauge.component';
+import { FormsModule } from '@angular/forms';
 
  
 @NgModule({
@@ -17,6 +18,7 @@ import { GaugeComponent } from './gauge/gauge.component';
   imports: [
     BrowserModule,
     NgxGaugeModule,
+    FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(()=>getDatabase())
   ],

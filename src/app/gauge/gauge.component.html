@@ -4,11 +4,12 @@
   <div class="gauge-container">
     <ngx-gauge
       [type]="'arch'"
-      [value]="temperature"
-      [size]="200"
-      [cap]="'butt'"
-      [thick]="20"
-      [label]="'Temperature: ' + temperature + '°C'"
+      [value]="moisture"
+      [size]="300"
+      [cap]="'round'"
+      [thick]="30"
+      [max]="1024"
+      [label]="'Moisture Level'"
     ></ngx-gauge>
   </div>
 
@@ -16,10 +17,21 @@
     <ngx-gauge
       [type]="'arch'"
       [value]="waterLevel"
-      [size]="200"
-      [cap]="'butt'"
-      [thick]="20"
-      [label]="'Water Level: ' + waterLevel + '%'"
+      [size]="300"
+      [cap]="'round'"
+      [thick]="30"
+      [append]="'%'"
+      [max]="100"
+      [label]="'Water Level'"
     ></ngx-gauge>
+  </div>
+
+  <div class="button-container">
+    <label>User Notification:</label>
+    <input
+      type="checkbox"
+      [(ngModel)]="userNotified"
+      (change)="toggleUserNotification()"
+    />
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Database, ref, onValue, getDatabase } from '@angular/fire/database';
+import { Database, ref, onValue, getDatabase, set } from '@angular/fire/database';
 
 
 @Component({
@@ -8,18 +8,37 @@ import { Database, ref, onValue, getDatabase } from '@angular/fire/database';
   styleUrls: ['./gauge.component.css']
 })
 export class GaugeComponent implements OnInit{
-  temperature: number = 0;
+  moisture: number = 0;
   waterLevel: number = 0;
+  userNotified: boolean = true;
 
   private database: Database = inject(Database);
 
   ngOnInit(): void {
     const db = getDatabase();
     const waterRefVal = ref(db, 'waterLevel');
+    const moistRefVal = ref(db, 'moisture');
 
     onValue(waterRefVal, (snapshot) => {
       const data = snapshot.val();
-      this.waterLevel = data;
+      const maxSensorVal = 1024;
+      this.waterLevel = Math.round(((maxSensorVal - data)/maxSensorVal)*100);
     })
+    onValue(moistRefVal, (snapshot) => {
+      const data = snapshot.val();
+      this.moisture = data;
+    })
+  }
+
+  toggleUserNotification() {
+    // Update the 'userNotified' value in the database
+    const db = getDatabase();
+    const userNotifiedRef = ref(db, 'userNotified');
+    
+    // Convert boolean to 0 or 1
+    const valueToSend = this.userNotified ? 1 : 0;
+
+    // Update the value in the database
+    set(userNotifiedRef, valueToSend);
   }
 }
