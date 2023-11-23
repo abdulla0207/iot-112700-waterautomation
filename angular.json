@@ -91,6 +91,13 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "iot-11270-waterAutomation:build:production"
+          }
         }
       }
     }

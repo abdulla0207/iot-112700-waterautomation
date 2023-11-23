@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "iot-11270-waterAutomation",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

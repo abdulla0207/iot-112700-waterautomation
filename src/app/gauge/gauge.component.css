@@ -1,0 +1,16 @@
+.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .gauge-container {
+    display: inline-block;
+    margin: 20px;
+  }
+  
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }

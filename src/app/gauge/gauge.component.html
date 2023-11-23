@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Gauge Dashboard</h1>
+
+  <div class="gauge-container">
+    <ngx-gauge
+      [type]="'arch'"
+      [value]="temperature"
+      [size]="200"
+      [cap]="'butt'"
+      [thick]="20"
+      [label]="'Temperature: ' + temperature + '°C'"
+    ></ngx-gauge>
+  </div>
+
+  <div class="gauge-container">
+    <ngx-gauge
+      [type]="'arch'"
+      [value]="waterLevel"
+      [size]="200"
+      [cap]="'butt'"
+      [thick]="20"
+      [label]="'Water Level: ' + waterLevel + '%'"
+    ></ngx-gauge>
+  </div>
+</div>

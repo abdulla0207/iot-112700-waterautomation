@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "iotcoursework00011270": {
+      "hosting": {
+        "iot-11270-waterAutomation": [
+          "iotcoursework00011270"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "iotcoursework00011270"
+  }
+}
