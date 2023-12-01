@@ -11,6 +11,8 @@ export class GaugeComponent implements OnInit{
   moisture: number = 0;
   waterLevel: number = 0;
   userNotified: boolean = true;
+  temperature: number = 0;
+  gas: number = 0;
 
   private database: Database = inject(Database);
 
@@ -18,6 +20,8 @@ export class GaugeComponent implements OnInit{
     const db = getDatabase();
     const waterRefVal = ref(db, 'waterLevel');
     const moistRefVal = ref(db, 'moisture');
+    const temperatureRefVal = ref(db, 'temperature');
+    const gasRefVal = ref(db, 'gasValue');
 
     onValue(waterRefVal, (snapshot) => {
       const data = snapshot.val();
@@ -27,6 +31,14 @@ export class GaugeComponent implements OnInit{
     onValue(moistRefVal, (snapshot) => {
       const data = snapshot.val();
       this.moisture = data;
+    })
+    onValue(temperatureRefVal, (snapshot) => {
+      const data = snapshot.val();
+      this.temperature = data;
+    })
+    onValue(gasRefVal, (snapshot) => {
+      const data = snapshot.val();
+      this.gas = data;
     })
   }
 

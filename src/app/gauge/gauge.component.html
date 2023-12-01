@@ -25,7 +25,28 @@
       [label]="'Water Level'"
     ></ngx-gauge>
   </div>
-
+  <div class="gauge-container-temp">
+    <ngx-gauge
+      [type]="'arch'"
+      [value]="temperature"
+      [size]="300"
+      [cap]="'round'"
+      [thick]="30"
+      [max]="100"
+      [label]="'Temperature'"
+    ></ngx-gauge>
+  </div>
+  <div class="gauge-container-temp">
+    <ngx-gauge
+      [type]="'arch'"
+      [value]="gas"
+      [size]="300"
+      [cap]="'round'"
+      [thick]="30"
+      [max]="1000"
+      [label]="'Gas Level'"
+    ></ngx-gauge>
+  </div>
   <div class="button-container">
     <label>User Notification:</label>
     <input

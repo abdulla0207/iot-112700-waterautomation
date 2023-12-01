@@ -7,6 +7,10 @@
     display: inline-block;
     margin: 20px;
   }
+  .gauge-container-temp {
+    display: block; 
+    margin: 20px auto; 
+  }
   
   button {
     font-size: 16px;
