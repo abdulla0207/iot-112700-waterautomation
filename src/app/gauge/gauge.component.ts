@@ -53,4 +53,8 @@ export class GaugeComponent implements OnInit{
     // Update the value in the database
     set(userNotifiedRef, valueToSend);
   }
+
+  speak(label: string, value: number): void {
+    this.speak(`${label} is `, value);
+  }
 }

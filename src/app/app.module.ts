@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
 import { NgxGaugeModule } from 'ngx-gauge';
 import { GaugeComponent } from './gauge/gauge.component';
 import { FormsModule } from '@angular/forms';
-
  
 @NgModule({
   declarations: [
