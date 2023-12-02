@@ -13,6 +13,7 @@ export class GaugeComponent implements OnInit{
   userNotified: boolean = true;
   temperature: number = 0;
   gas: number = 0;
+  turnOnPump: boolean = true;
 
   private database: Database = inject(Database);
 
@@ -56,5 +57,14 @@ export class GaugeComponent implements OnInit{
 
   speak(label: string, value: number): void {
     this.speak(`${label} is `, value);
+  }
+
+  toggleWaterPump(){
+    const db = getDatabase();
+    const turnOnRef = ref(db, 'turnOnPump');
+
+    const valueToSend = this.turnOnPump ? 1 : 0;
+
+    set(turnOnRef, valueToSend);
   }
 }
